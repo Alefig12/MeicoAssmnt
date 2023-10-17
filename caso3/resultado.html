@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la Suma</title>
+</head>
+<body>
+    <h1>Resultado de la Suma</h1>
+    <div id="resultado">
+        <script>
+           
+            const urlParams = new URLSearchParams(window.location.search);
+            const numero1 = parseFloat(urlParams.get("n1"));
+            const numero2 = parseFloat(urlParams.get("n2"));
+
+            if (!isNaN(numero1) && !isNaN(numero2)) {
+                const suma = numero1 + numero2;
+                document.getElementById("resultado").textContent = "La suma es: " + suma;
+            } else {
+                document.getElementById("resultado").textContent = "Por favor, ingrese dos números válidos.";
+            }
+        </script>
+    </div>
+</body>
+</html>
